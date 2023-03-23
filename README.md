@@ -1,6 +1,18 @@
 # tensorslow-experimentation
+Currently we are performing experiments on the MNIST dataset. Here are some initial results on our classifier.
+### Installation
 
-### Saved Model Usage
+First download the code from the repository
+```shell
+git clone git@github.com:oortega20/tensorslow.git
+```
+
+To install the current release of Tensorslow
+```shell
+python -m pip install -e tensorslow
+```
+
+### Tensorslow MNIST Classifier usage
 ```python
 from tensorslow.datasets import MNIST
 from tensorslow.models import ts_mnist_classifier
@@ -28,7 +40,7 @@ Our model is a two layer dense network with relu-activations. Here is the summar
 In training the tensorslow model for classification on the MNIST Dataset, the default hyper-parameters as as follows: the training-steps is 4,680 with batch-size 128. We trained our model using SGD as the optimization methodology with learning-rate $\lambda=5e-4$ (chosen via some fiddling/trial and error). 
 
 
-![Tensorslow MS Training](imgs/ts_loss.png)
+![Tensorslow MS Training](ts_loss.png)
 ### Results
 Our initial training setup has proved to be successful with a final accuracy of **95%** on the test dataset for MNIST. Our model is best able to recognize the digit 1 and is least able to recognizing the digit 8. We have detailed summaries of our results in the graphs below.
 
@@ -46,7 +58,7 @@ Our initial training setup has proved to be successful with a final accuracy of 
 | 8       |          0.937 |
 | 9       |          0.957 |
 | TOTAL   |          0.957 |
-![Train Conf Matrix](imgs/train_conf_matrix.png)
+![Train Conf Matrix](train_conf_matrix.png)
 
 **Test Accuracy**
 
@@ -63,7 +75,7 @@ Our initial training setup has proved to be successful with a final accuracy of 
 | 8       |          0.923 |
 | 9       |          0.948 |
 | TOTAL   |          0.95  |
-![Test Conf Matrix](imgs/test_conf_matrix.png)
+![Test Conf Matrix](test_conf_matrix.png)
 
 ## Future Work
 We plan to implement and perform experiments using the various activation functions mentioned in [[1]](https://doi.org/10.20944/preprints202301.0463.v1.) for use within tensorslow. Be on the lookout for results of experiments within our tensorslow experimentation repository [here](https://github.com/oortega20/tensorslow-experimentation). We also plan to perform experiments with the optimizers included within the tensorslow framework.
